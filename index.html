@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07152d">
+  <title>Will You Marry Me? 💍</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <div class="sparkle sparkle-one">✦</div>
+  <div class="sparkle sparkle-two">✧</div>
+  <main class="app">
+    <div class="top-mark">♡ <span>forever starts here</span> ♡</div>
+
+    <section class="page active" id="page1">
+      <article class="card hero-card">
+        <div class="eyebrow">A LITTLE QUESTION FOR YOU</div>
+        <div class="ring-art" aria-hidden="true">💍</div>
+        <img class="ring-img" src="ring.jpeg"  aria-hidden="true" height="200px" width="200px">
+        <h1>Will you marry me?</h1>
+        <p class="lead">💙 I choose you. Today, tomorrow, and every day after. 💍</p>
+        <div class="actions">
+          <button class="btn btn-primary" data-choice="YES, FOREVER" onclick="recordAndGo('YES, FOREVER', 2)">YES, FOREVER 💍</button>
+          <button class="btn btn-secondary" id="noBtn" data-choice="NO" onclick="handleNo()">NO 🙈</button>
+        </div>
+        <p class="micro">made with love <span>💙</span></p>
+      </article>
+    </section>
+
+    <section class="page" id="page2">
+      <article class="card">
+        <div class="big-icon">🥹💍</div>
+        <h1>You really said YES to forever?</h1>
+        <p class="lead">You just made me the happiest person. 💙</p>
+        <p class="body-copy">I promise to keep choosing you, cheering for you, and finding reasons to make you smile.</p>
+        <button class="btn btn-primary wide" onclick="recordAndGo('CONTINUE FROM YES', 5)">let's go →</button>
+        <p class="micro">made with love <span>💙</span></p>
+      </article>
+    </section>
+
+    <section class="page" id="page3">
+      <article class="card">
+        <div class="big-icon">💌</div>
+        <h1>One tiny thing...</h1>
+        <p class="lead">This is the start of our forever.</p>
+        <p class="body-copy">No perfect words, no perfect plan — just you and me, choosing each other.</p>
+        <button class="btn btn-primary wide" onclick="recordAndGo('CONTINUE TO DATE', 6)">tell me more →</button>
+        <p class="micro">made with love <span>💙</span></p>
+      </article>
+    </section>
+
+    <section class="page" id="page4">
+      <article class="card">
+        <div class="big-icon">📅</div>
+        <h1>When should we celebrate our forever?</h1>
+        <p class="lead">Pick a date and time for our special moment.</p>
+        <div class="field">
+          <label for="date">OUR DATE</label>
+          <input type="date" id="date" name="date">
+        </div>
+        <div class="field">
+          <label for="time">OUR TIME</label>
+          <input type="time" id="time" name="time" value="18:00">
+        </div>
+        <button class="btn btn-primary wide" onclick="saveDateAndGo()">save our date →</button>
+        <p class="micro">made with love <span>💙</span></p>
+      </article>
+    </section>
+
+    <section class="page" id="page5">
+      <article class="card">
+        <div class="big-icon">🍽️✨</div>
+        <h1>How should we celebrate?</h1>
+        <p class="lead">Choose our celebration dinner.</p>
+        <div class="food-grid">
+          <button class="food" onclick="selectFood(this, 'Pizza')"><span>🍕</span><b>Pizza</b></button>
+          <button class="food" onclick="selectFood(this, 'Sushi')"><span>🍣</span><b>Sushi</b></button>
+          <button class="food" onclick="selectFood(this, 'Burgers')"><span>🍔</span><b>Burgers</b></button>
+          <button class="food" onclick="selectFood(this, 'Pasta')"><span>🍝</span><b>Pasta</b></button>
+          <button class="food" onclick="selectFood(this, 'Tacos')"><span>🌮</span><b>Tacos</b></button>
+          <button class="food" onclick="selectFood(this, 'Ramen')"><span>🍜</span><b>Ramen</b></button>
+        </div>
+        <button class="btn btn-primary wide" onclick="saveFoodAndGo()">that's the vibe →</button>
+        <p class="micro">made with love <span>💙</span></p>
+      </article>
+    </section>
+
+    <section class="page" id="page6">
+      <article class="card final-card">
+        <div class="big-icon">💙💍💙</div>
+        <h1>Here's to our forever.</h1>
+        <p class="lead">I can't wait to build a beautiful life with you.</p>
+        <p class="body-copy">P.S. I made you a whole website instead of sending a normal text. No big deal. 🥹</p>
+        <div class="heart-row">♥ ♥ ♥ ♥ ♥</div>
+        <button class="btn btn-primary wide" onclick="finishProposal()">YES, TO FOREVER 💍</button>
+        <p class="micro">always yours <span>💙</span></p>
+      </article>
+    </section>
+    <footer>made with <span>♥</span> and a little courage</footer>
+  </main>
+  <script src="scripy.js"></script>
+</body>
+</html>

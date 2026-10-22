@@ -1,0 +1,48 @@
+WILL YOU MARRY ME? — DARK BLUE WEBSITE
+========================================
+
+IMPORTANT FIX:
+This version uses a correct Flask folder structure, so CSS, JavaScript and the pug image load correctly.
+The previous screenshot showed raw HTML because the CSS path was not being served by Flask.
+
+FILES
+- app.py                 Flask server + SQLite event logging
+- requirements.txt       Python dependency
+- templates/index.html   Six-screen proposal website
+- templates/admin.html   Activity dashboard
+- static/style.css       Dark navy / blue theme
+- static/script.js       Page transitions and event tracking
+- static/assets/pug.jpg  Local pug image
+- visitor_activity.db    Created automatically when activity is recorded
+
+PAGE SEQUENCE
+1 -> 2 -> 5 -> 4 -> 3 -> 6
+
+RUN IT
+1. Extract the ZIP.
+2. Open a terminal in the extracted folder.
+3. Install requirements:
+   python -m pip install -r requirements.txt
+4. Start the server:
+   python app.py
+5. Open:
+   http://127.0.0.1:5000
+
+VIEW SAVED CLICKS / ANSWERS
+Open http://127.0.0.1:5000/admin
+Browser login:
+  username: admin
+  password: change-me-now
+
+SECURITY
+Before hosting online, set a strong admin password in your environment:
+  Windows PowerShell: $env:ADMIN_PASSWORD="use-a-long-unique-password"
+  macOS/Linux: export ADMIN_PASSWORD="use-a-long-unique-password"
+Then restart the server. Use HTTPS and obtain consent before collecting visitor analytics.
+
+NOTES
+- The website must be served through Flask; do not open templates/index.html directly.
+- CSS and JavaScript are served from Flask's /static folder.
+- Activity is saved to visitor_activity.db on the machine running app.py.
+- For public visitors, deploy the whole Flask project to a server; local 127.0.0.1 is only your own computer.
+- This project uses JavaScript (not Java) for browser interactions.
